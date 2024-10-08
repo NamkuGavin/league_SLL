@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1728381013 source:d:\telkomuniversity\if-47-10 semester 3\struktur data\tugas\tugas_league\tugasleague\main.cpp
+	<iostream>
+	"league.h"
+
+1728379795 d:\telkomuniversity\if-47-10 semester 3\struktur data\tugas\tugas_league\tugasleague\league.h
+	<iostream>
+
+1728379795 source:d:\telkomuniversity\if-47-10 semester 3\struktur data\tugas\tugas_league\tugasleague\league.cpp
+	<iostream>
+	"league.h"
+
