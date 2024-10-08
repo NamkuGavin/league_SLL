@@ -22,19 +22,19 @@ struct List {
     address first;
 };
 
-void createList(List &L);
+void createList(List &GAA);
 address allocate(infotype x);
 
-void insertFirst(List &L, address P);
-void insertLast(List &L, address P);
-void insertAfter(List &L, address PREC ,address P);
+void insertFirst(List &GAA, address P);
+void insertLast(List &GAA, address P);
+void insertAfter(List &GAA, address PREC ,address P);
 
-void deleteFirst(List &L, address P);
-void deleteLast(List &L, address P);
-void deleteAfter(List &L, address PREC ,address P);
+void deleteFirst(List &GAA, address P);
+void deleteLast(List &GAA, address P);
+void deleteAfter(List &GAA, address PREC ,address P);
 
-void sortBy(List &L);
-void printInfo(List L);
+void sortBy(List &GAA);
+void printInfo(List GAA);
 address searchByPosition(List &L, int position);
 
 

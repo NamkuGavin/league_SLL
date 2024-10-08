@@ -2,8 +2,8 @@
 #include "league.h"
 using namespace std;
 
-void createList(List &L) {
-    first(L) = NULL;
+void createList(List &GAA) {
+    first(GAA) = NULL;
 }
 
 address allocate(infotype x) {
@@ -13,22 +13,22 @@ address allocate(infotype x) {
     return p;
 }
 
-void insertFirst(List &L, address P){
-    if (first(L) == NULL){
-        first(L) = P;
+void insertFirst(List &GAA, address P){
+    if (first(GAA) == NULL){
+        first(GAA) = P;
     } else {
-        next(P) = first(L);
-        first(L) = P;
+        next(P) = first(GAA);
+        first(GAA) = P;
     }
 }
 
-void insertLast(List &L, address P) {
+void insertLast(List &GAA, address P) {
     address Q;
 
-    if (first(L) == NULL) {
-        insertFirst(L, P);
+    if (first(GAA) == NULL) {
+        insertFirst(GAA, P);
     } else {
-        Q = first(L);
+        Q = first(GAA);
         while (next(Q) != NULL) {
             Q = next(Q);
         }
@@ -36,32 +36,32 @@ void insertLast(List &L, address P) {
     }
 }
 
-void insertAfter(List &L, address PREC, address P) {
+void insertAfter(List &GAA, address PREC, address P) {
     if (next(PREC) == NULL) {
-        insertLast(L, P);
+        insertLast(GAA, P);
     } else {
         next(P) = next(PREC);
         next(PREC) = P;
     }
 }
 
-void deleteFirst(List &L, address P){
-    if (first(L) == NULL) {
+void deleteFirst(List &GAA, address P){
+    if (first(GAA) == NULL) {
         P = NULL;
     } else {
-        P = first(L);
-        first(L) = next(P);
+        P = first(GAA);
+        first(GAA) = next(P);
         P = NULL;
     }
 }
 
-void deleteLast(List &L, address P){
+void deleteLast(List &GAA, address P){
     address Q;
 
-    if (first(L) == NULL) {
+    if (first(GAA) == NULL) {
         P = NULL;
     } else {
-        Q = first(L);
+        Q = first(GAA);
         while (next(next(Q)) != NULL) {
             Q = next(Q);
         }
@@ -70,9 +70,9 @@ void deleteLast(List &L, address P){
     }
 }
 
-void deleteAfter(List &L, address PREC, address P){
+void deleteAfter(List &GAA, address PREC, address P){
     if (next(PREC) == NULL) {
-        deleteLast(L, P);
+        deleteLast(GAA, P);
     } else {
         P = next(PREC);
         next(PREC) = next(P);
@@ -80,14 +80,14 @@ void deleteAfter(List &L, address PREC, address P){
     }
 }
 
-void sortBy(List &L){
+void sortBy(List &GAA){
     address P, Q, SL;
 
-    if (next(first(L))!= NULL) {
-        P = first(L);
+    if (next(first(GAA))!= NULL) {
+        P = first(GAA);
         SL = NULL;
         while (P != NULL) {
-            first(L) = next(P);
+            first(GAA) = next(P);
             if (SL == NULL || info(SL).tanggal > info(P).tanggal) {
                 next(P) = SL;
                 SL = P;
@@ -99,17 +99,17 @@ void sortBy(List &L){
                 next(P) = next(Q);
                 next(Q) = P;
             }
-            P = first(L);
+            P = first(GAA);
         }
-        first(L) = SL;
+        first(GAA) = SL;
     }
 }
 
-void printInfo(List L){
-    if (first(L) == NULL){
+void printInfo(List GAA){
+    if (first(GAA) == NULL){
         cout << "LIST KOSONG" << endl;
     } else {
-        address Q = first(L);
+        address Q = first(GAA);
         while (Q != NULL) {
             cout << info(Q).kandang << " " << info(Q).musuh << " " << info(Q).tanggal << endl;
             Q = next(Q);
